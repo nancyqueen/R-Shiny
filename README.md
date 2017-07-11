@@ -9,7 +9,7 @@ library(shinyjs)
 library(devtools)
 ```
 
-## part I: Define UI (user interface)
+## Part I: Define UI (user interface)
 - title, layout, ...
 - UI input: 
 ```
@@ -20,16 +20,19 @@ sliderInput, checkboxInput, selectInput, checkboxGroupInput,...
 ```
 tableOutput, plotOutput, verbatimTextOutput, h4,...
 ```
-## part II: Define Server
+## Part II: Define Server
 ```
 shinyjs::toggleState
 reacitve({}): updateSelectInput, updateCheckboxGroupInput,...
 reacitve({}): filter
-reacitve({}): survfit # Kaplan-Meier Estimate
+reacitve({}): survfit() # Kaplan-Meier Estimate
 output: renderPlot (ggplot, ggsurvplot), renderText, renderPrint, renderTable,...
 ```
 
-## part III: Return a Shiny app object
+## Part III: Return a Shiny app object
+```
+shinyApp(ui = ui, server = server)
+```
 
 
 
