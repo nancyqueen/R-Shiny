@@ -1,4 +1,4 @@
-# R-Shiny-Stats
+# RShiny
 
 ### Loading required R packages: 
 ```
