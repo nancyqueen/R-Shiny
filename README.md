@@ -1,4 +1,4 @@
-# RShiny
+# R Shiny App
 
 ### Loading required R packages: 
 ```
