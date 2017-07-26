@@ -53,7 +53,7 @@ titlePanel(), sidebarLayout(sidebarPanel(),mainPanel())
 ```
 fileInput(inputId="", label="", accept=), 
 sliderInput(inputId="", label="", min=, max=, value=), 
-selectInput(inputId="", label="", choices=), 
+selectInput(inputId="variable", label="", choices=), 
 checkboxGroupInput(inputId="", label="", choices=, selected=),
 checkboxInput(), ...
 ```
@@ -61,21 +61,33 @@ checkboxInput(), ...
 ```
 dataTableOutput(outpuId="")
 plotOutput(outputId = 'plot', width = "60%", height = "500px")
-verbatimTextOutput()
-h4(),...
+verbatimTextOutput(),
+htmlOutput(""),
+h4(),h3(),...
 ```
 
 ## Part II: Define Server
 ```
-server <- function(input, output) {}
+server <- function(input, output, session) {}
+```
+```
+observe({})
+shinyjs::toggleState("inputId", input$variable!="")
+```
+- reacitve({}): 
+```
+updateSelectInput(session, "inputId", choices = c()), 
+updateCheckboxGroupInput(session, "inputId", choices=, selected=),
+filter(data, X==input$variable)
+survfit(as.formula(paste("Surv(Time,Status) ~ ", paste(input$variable))),
+        conf.type="log-log", data= data) # Kaplan-Meier Estimate
 ```
 - Render Functions:
 ```
-shinyjs::toggleState
-reacitve({}): updateSelectInput(), updateCheckboxGroupInput(),...
-reacitve({}): filter
-reacitve({}): survfit() # Kaplan-Meier Estimate
-output: renderPlot(ggplot, ggsurvplot), renderText(), renderPrint(), renderTable(),...
+renderPlot({ggplot()})
+renderText({paste()})
+renderPrint({summary()})
+renderDataTable({}, options = list(pageLength = 10))
 ```
 
 ### Function Reference:
