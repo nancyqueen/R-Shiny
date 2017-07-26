@@ -1,15 +1,22 @@
 # R Shiny App
 
+#### R Shiny: a web application framework for R
+#### Turn analyses into interactive web applications
+
+https://shiny.rstudio.com/
+
 ### Loading required R packages: 
 ```
 library(shiny)
+library(shinyjs)
+```
+```
 library(ggplot2)
 library(survival)
-library(shinyjs)
 library(dplyr)
 library(DT)
-
 ```
+
 ### Loading optioanl R packages: 
 ```
 library(devtools)
