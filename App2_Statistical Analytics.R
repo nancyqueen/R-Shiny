@@ -81,7 +81,7 @@ ui = fluidPage(
       
       # User-friendly Notes:
       tags$small(paste0(
-        "Note: The Shiny App #1",
+        "Note: This is the Shiny App #2",
         "",
         ""
       ))
