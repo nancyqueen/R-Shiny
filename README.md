@@ -28,11 +28,15 @@ library(caTools)
 ```
 
 ## Basic Features
-### 1. Upload file(s)
-### 2. Download file
-### 3. Checkbox
-### 4. Selectbox
-### 5. Sliders
+#### 1. Upload file(s)
+#### 2. Download file
+#### 3. Checkbox, Selectbox, Sliders
+
+
+### R shiny Showcase:
+https://www.rstudio.com/products/shiny/shiny-user-showcase/
+### R shiny Gallery (examples):
+https://shiny.rstudio.com/gallery/
 
 
 ## Part I: Define UI (user interface)
@@ -54,6 +58,10 @@ reacitve({}): filter
 reacitve({}): survfit() # Kaplan-Meier Estimate
 output: renderPlot(ggplot, ggsurvplot), renderText(), renderPrint(), renderTable(),...
 ```
+
+### Function Reference:
+https://shiny.rstudio.com/reference/shiny/latest/
+
 
 ## Part III: Return a Shiny app object
 ```
