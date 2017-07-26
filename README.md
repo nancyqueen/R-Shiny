@@ -8,6 +8,7 @@ https://shiny.rstudio.com/
 ### Loading required R packages: 
 ```
 library(shiny)
+# Perform JavaScript operations in Shiny apps using plain R code
 library(shinyjs)
 ```
 ```
@@ -40,17 +41,35 @@ https://shiny.rstudio.com/gallery/
 
 
 ## Part I: Define UI (user interface)
-- title, layout, ...
+```
+ui = fluidPage()
+```
+- UI Layout:
+```
+shinyjs::useShinyjs() 
+titlePanel(), sidebarLayout(sidebarPanel(),mainPanel())
+```
 - UI input: 
 ```
-fileInput, sliderInput(), checkboxInput(), selectInput(), checkboxGroupInput(),...
+fileInput(inputId="", label="", accept=), 
+sliderInput(inputId="", label="", min=, max=, value=), 
+selectInput(inputId="", label="", choices=), 
+checkboxGroupInput(inputId="", label="", choices=, selected=),
+checkboxInput(), ...
 ```
 - UI output：
 ```
-tableOutput(), plotOutput(), verbatimTextOutput(), h4(),...
+dataTableOutput(outpuId="")
+plotOutput(outputId = 'plot', width = "60%", height = "500px")
+verbatimTextOutput()
+h4(),...
 ```
 
 ## Part II: Define Server
+```
+server <- function(input, output) {}
+```
+- Render Functions:
 ```
 shinyjs::toggleState
 reacitve({}): updateSelectInput(), updateCheckboxGroupInput(),...
