@@ -43,10 +43,7 @@ ui = fluidPage(
                               "Highest Degree"="Highestdegree", 
                               "Hire Source"="hiresource_com", 
                               "Last Employee Level"="lastEELevel", 
-                              #"Last Position Year"="lastpositionyear",
-                              #"Social Service Year at Hire"="SSYatHire",
-                              #"Terminate" = "ifTerminate",
-                              "Service Year at Lilly"= "ServiceYear")
+                              "Service Year"= "ServiceYear")
                   ),
       
       
@@ -72,7 +69,7 @@ ui = fluidPage(
                   choices = NULL
       ),
       sliderInput(inputId = "service_year", 
-                  label = "Service Year at Lilly",
+                  label = "Service Year",
                   min = 0, max = 20, value = c(0, 20)),
 
       # Create Checkbox Group Input Control
